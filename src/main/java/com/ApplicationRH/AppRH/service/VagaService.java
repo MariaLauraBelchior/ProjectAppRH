@@ -31,5 +31,19 @@ public class VagaService {
         return new VagaDTO(vaga);
     }
 
+    public VagaDTO atualizarVaga(Long id, VagaDTO dto) {
+        Vaga vaga = vagaRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Vaga não encontrada"));
+        BeanUtils.copyProperties(dto, vaga, "id");
+        vaga = vagaRepository.save(vaga);
+        return new VagaDTO(vaga);
+    }
+
+    public void deletarVaga(Long id) {
+        Vaga vaga = vagaRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Vaga não encontrada"));
+        vagaRepository.delete(vaga);
+    }
+
     
 }
