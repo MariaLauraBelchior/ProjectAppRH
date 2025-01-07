@@ -35,9 +35,9 @@ public class FuncionarioService {
                 .collect(Collectors.toList());
     }
 
-public FuncionarioDTO buscarId(Long id) {
-    Funcionario funcionario = funcionarioRepository.findById(id)
-                .orElseThrow(()-> new RuntimeException("Funcionário não encontrada"));
+    public FuncionarioDTO buscarId(Long id) {
+        Funcionario funcionario = funcionarioRepository.findById(id)
+                    .orElseThrow(()-> new RuntimeException("Funcionário não encontrada"));
         return new FuncionarioDTO(funcionario);
     }
 

@@ -11,9 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ApplicationRH.AppRH.dto.CandidatoDTO;
 import com.ApplicationRH.AppRH.dto.VagaDTO;
-import com.ApplicationRH.AppRH.service.CandidatoService;
 import com.ApplicationRH.AppRH.service.VagaService;
 
 @RestController
@@ -22,9 +20,6 @@ public class VagaController {
     
     @Autowired
     private VagaService vagaService;
-
-    @Autowired
-    private CandidatoService candidatoService;
 
     @PostMapping
     public ResponseEntity<VagaDTO> criarVaga(@RequestBody VagaDTO dto) {
