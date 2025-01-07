@@ -50,15 +50,5 @@ public class VagaController {
         return ResponseEntity.noContent().build();
     }
 
-    @PostMapping
-    public ResponseEntity<CandidatoDTO> adicionarCandidato(@RequestBody CandidatoDTO dto) {
-        CandidatoDTO nCandidato = candidatoService.adicionarCandidato(dto);
-        return ResponseEntity.ok(nCandidato);
-    }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletarCandidato(@PathVariable Long id) {
-        candidatoService.deletarCandidato(id);
-        return ResponseEntity.noContent().build();
-    }
 }
